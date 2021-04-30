@@ -9,7 +9,11 @@ import random
 
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
+from scrapy.core.downloader.handlers.http11 import TunnelError
 from scrapy.exceptions import NotConfigured
+from twisted.internet import defer
+from twisted.internet.error import DNSLookupError, ConnectError, TCPTimedOutError, ConnectionLost
+from twisted.web._newclient import ResponseFailed
 
 
 class SpiderprojectSpiderMiddleware:
@@ -136,8 +140,6 @@ class RandomProxyMiddlewate(object):
             print(' ' * 80)
             print(' ' * 80)
             #print("3、Request对象 代理 = %s" % sx)
-
-
         pass
 
     # 第四步、
@@ -181,7 +183,12 @@ class RandomProxyMiddlewate(object):
         from scrapy.spidermiddlewares import httperror
         # 有代理,且网络请求报错,则可认为该IP出现问题了,则从代理池中删除
         # 有代理,且出现该异常即是代理的问题 twisted.internet.error.ConnectionLost
-        if curl_proxy and (isinstance(exception,(ConnectionRefusedError,TimeoutError,ConnectionDone,httperror))):
+        # defer 这里的导入选择 twisted.internet.defer 导入
+        EXCEPTIONS_TO_RETRY  = (defer.TimeoutError, TimeoutError, DNSLookupError,
+                               ConnectionRefusedError, ConnectionDone, ConnectError,
+                               ConnectionLost, TCPTimedOutError, ResponseFailed,
+                               IOError, TunnelError)
+        if curl_proxy and (isinstance(exception,EXCEPTIONS_TO_RETRY)):
             print('4、%s 请求失败,代理池中删除,异常:(%s) 代理 %s' % (request,exception,curl_proxy))
             print('-' * 80)
             if curl_proxy in self.PROXYS:

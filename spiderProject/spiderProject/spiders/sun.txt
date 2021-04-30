@@ -1,0 +1,73 @@
+2021-04-30 14:12:45 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: spiderProject)
+2021-04-30 14:12:45 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.9.4 (tags/v3.9.4:1f2e308, Apr  6 2021, 13:40:21) [MSC v.1928 64 bit (AMD64)], pyOpenSSL 20.0.1 (OpenSSL 1.1.1k  25 Mar 2021), cryptography 3.4.7, Platform Windows-10-10.0.17763-SP0
+2021-04-30 14:12:45 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2021-04-30 14:12:45 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'spiderProject',
+ 'CONCURRENT_REQUESTS': 2,
+ 'DOWNLOAD_TIMEOUT': 10,
+ 'LOG_FILE': 'sun.txt',
+ 'NEWSPIDER_MODULE': 'spiderProject.spiders',
+ 'SPIDER_MODULES': ['spiderProject.spiders'],
+ 'TELNETCONSOLE_PASSWORD': 'bb',
+ 'TELNETCONSOLE_PORT': [6024],
+ 'TELNETCONSOLE_USERNAME': 'aa'}
+2021-04-30 14:12:45 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats', 'scrapy.extensions.logstats.LogStats']
+2021-04-30 14:12:46 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'spiderProject.middlewares.RandomProxyMiddlewate',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-04-30 14:12:46 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-04-30 14:12:46 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2021-04-30 14:12:46 [scrapy.core.engine] INFO: Spider opened
+2021-04-30 14:12:46 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-04-30 14:12:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://httpbin.org/ip> (referer: None)
+2021-04-30 14:12:47 [spiderProject.spiders.sun_kitchen] INFO: This is a 88888 warning
+2021-04-30 14:12:47 [spiderProject.spiders.sun_kitchen] DEBUG: This is a 88888 warning
+2021-04-30 14:12:47 [scrapy.core.engine] DEBUG: Crawled (403) <GET http://httpbin.org/get> (referer: None)
+2021-04-30 14:12:47 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <403 http://httpbin.org/get>: HTTP status code is not handled or not allowed
+2021-04-30 14:12:48 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://138.201.138.240> from <GET http://httpbin.org/user-agent>
+2021-04-30 14:12:48 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://138.201.138.240> from <GET http://138.201.138.240>
+2021-04-30 14:12:48 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET http://138.201.138.240> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2021-04-30 14:12:56 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-04-30 14:12:56 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 1,
+ 'downloader/request_bytes': 1506,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 1130,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 2,
+ 'downloader/response_status_count/403': 1,
+ 'dupefilter/filtered': 2,
+ 'elapsed_time_seconds': 10.013909,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 4, 30, 6, 12, 56, 544970),
+ 'httperror/response_ignored_count': 1,
+ 'httperror/response_ignored_status_count/403': 1,
+ 'log_count/DEBUG': 6,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 5,
+ 'scheduler/dequeued/memory': 5,
+ 'scheduler/enqueued': 5,
+ 'scheduler/enqueued/memory': 5,
+ 'start_time': datetime.datetime(2021, 4, 30, 6, 12, 46, 531061)}
+2021-04-30 14:12:56 [scrapy.core.engine] INFO: Spider closed (finished)

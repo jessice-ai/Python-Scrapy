@@ -12,7 +12,7 @@ BOT_NAME = 'spiderProject'
 SPIDER_MODULES = ['spiderProject.spiders']
 NEWSPIDER_MODULE = 'spiderProject.spiders'
 
-
+TimeoutError
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'spiderProject (+http://www.yourdomain.com)'
 
